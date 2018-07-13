@@ -56,17 +56,17 @@ public class ReportGenerator {
         BufferedWriter out = null;
         try {
             out = new BufferedWriter(new FileWriter(targetFile));
-            out.write("收件人：lingyun.shan@ttpai.cn");
+            out.write("收件人："+System.lineSeparator()+"lingyun.shan@ttpai.cn");
             out.write(System.lineSeparator());
             out.write(System.lineSeparator());
-            out.write("抄送：xiqiang.zhao@ttpai.cn,miao.jiang@ttpai.cn");
+            out.write("抄送："+System.lineSeparator()+"xiqiang.zhao@ttpai.cn,miao.jiang@ttpai.cn");
             out.write(System.lineSeparator());
             out.write(System.lineSeparator());
             out.write("主题：平台技术部日报 - " + date + " - 姜志恒");
             out.write(System.lineSeparator());
             out.write(System.lineSeparator());
             out.write("内容：");
-            out.write(System.lineSeparator());
+            out.write(System.lineSeparator()+System.lineSeparator());
             out.write("平台技术部日报 - " + date + " - 姜志恒");
             out.write(System.lineSeparator());
             out.write("----------------------------------------------------------------------------------------------------------------------");
