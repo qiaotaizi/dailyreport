@@ -35,4 +35,10 @@ public class AppTest
     {
         assertTrue( true );
     }
+    
+    
+    public void char0Test() {
+    	String test="123";
+    	System.out.println(test.charAt(0));
+    }
 }

@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Hello world!
+ * 程序入口,在MF文件中配置
+ * Main-Class: com.jaiz.dailyreport.App
+ * @author graci
  *
  */
 public class App {
