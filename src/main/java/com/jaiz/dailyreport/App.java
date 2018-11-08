@@ -14,6 +14,7 @@ public class App {
 
 		ReportGenerator generator = new ReportGenerator();
 		try {
+			//生成文件
 			generator.genReport();
 		} catch (IOException e) {
 			e.printStackTrace();

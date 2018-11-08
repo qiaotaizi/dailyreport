@@ -1,13 +1,6 @@
 package com.jaiz.dailyreport;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -99,7 +92,7 @@ public class ReportGenerator {
 			out.write("抄送：" + System.lineSeparator() + "xiqiang.zhao@ttpai.cn,miao.jiang@ttpai.cn");
 			out.write(System.lineSeparator());
 			out.write(System.lineSeparator());
-			out.write("主题：平台技术部日报 - " + date + " - 姜志恒");
+			out.write("主题："+System.lineSeparator()+"平台技术部日报 - " + date + " - 姜志恒");
 			out.write(System.lineSeparator());
 			out.write(System.lineSeparator());
 			out.write("内容：");
@@ -209,7 +202,11 @@ public class ReportGenerator {
 	 * @param expireDay
 	 */
 	private void deleteExpiredReports(int expireDay) {
-		File[] reps = targetDir.listFiles();
+		//仅获取尾缀为dr的文件
+		File[] reps = targetDir.listFiles(
+				//lambda表达式取代匿名内部类语法
+				pathname -> pathname.getName().endsWith(".dr")
+		);
 		// 系统当前时间
 		long curr = System.currentTimeMillis();
 		for (File rep : reps) {
