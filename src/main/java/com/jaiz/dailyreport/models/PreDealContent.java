@@ -1,4 +1,4 @@
-package com.jaiz.dailyreport;
+package com.jaiz.dailyreport.models;
 
 import java.util.List;
 
