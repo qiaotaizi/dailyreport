@@ -1,6 +1,7 @@
 package com.jaiz.dailyreport.models.fillers;
 
 import com.jaiz.dailyreport.annotations.FillerName;
+import com.jaiz.utils.GlobalConstant;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -23,8 +24,8 @@ public class TemplateFiller {
         BufferedReader reader = null;
         BufferedWriter writer = null;
         try {
-            reader = new BufferedReader(new FileReader(templateFile));
-            writer = new BufferedWriter(new FileWriter(reportFile, appendMode));
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(templateFile), GlobalConstant.DEFAULT_CHARSET));
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(reportFile,appendMode),GlobalConstant.DEFAULT_CHARSET));
             String line;
             //逐行读取
             //将可替换的值写入

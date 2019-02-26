@@ -10,13 +10,13 @@ public class ReportFiller extends TemplateFiller {
     /**
      * 收件人
      */
-    @FillerName(value = "email.recievers", joinSpliter = ",")
+    @FillerName(value = "email.recievers", joinSpliter = ";")
     private String[] emailRecievers;
 
     /**
      * 抄送人
      */
-    @FillerName(value = "email.cc.recievers", joinSpliter = ",")
+    @FillerName(value = "email.cc.recievers", joinSpliter = ";")
     private String[] emailCcRecievers;
 
     /**

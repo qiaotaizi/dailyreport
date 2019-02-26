@@ -13,12 +13,6 @@ import java.io.File;
 public class Config {
 
     /**
-     * 使用什么命令打开生成的日报文件
-     */
-    @ConfigCover("open.report.app")
-    public String openReportApp = "notepad";
-
-    /**
      * jira登录os_username参数
      */
     @ConfigCover(value = "jira.login.username", necessary = true)
@@ -31,10 +25,46 @@ public class Config {
     public String jiraLoginPassword;
 
     /**
-     * jira登录os_password参数login参数
+     * 报告人姓名,最好和jira中的姓名相一致
      */
-    @ConfigCover(value = "jira.login", necessary = true)
+    @ConfigCover(value = "reporter.name", necessary = true)
+    public String reporterName;
+
+    /**
+     * 部门名称
+     */
+    @ConfigCover(value = "department.name", necessary = true)
+    public String departmentName;
+
+    /**
+     * 收件人邮箱地址,多个值时用,分割
+     */
+    @ConfigCover(value = "email.receivers", necessary = true)
+    public String emailReceivers;
+
+    /**
+     * 抄送人邮箱地址,多个值时用,分割
+     */
+    @ConfigCover(value = "email.cc.recievers", necessary = true)
+    public String emailCcRecievers;
+
+    /**
+     * codeReview对象邮箱地址
+     */
+    @ConfigCover(value = "code.review.reciever", necessary = true)
+    public String codeReviewReciever;
+
+    /**
+     * jira登录login参数
+     */
+    @ConfigCover("jira.login")
     public String jiraLogin;
+
+    /**
+     * 使用什么命令打开生成的日报文件
+     */
+    @ConfigCover("open.report.app")
+    public String openReportApp = "notepad";
 
     /**
      * jira登录url
@@ -78,7 +108,7 @@ public class Config {
     public String codeReviewTemplateFile = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "dailyReport" + File.separator + "codeReview.template";
 
     /**
-     * 日报存留天数
+     * 日报文件存留天数
      */
     @ConfigCover("report.remain.time")
     public int reportRemainTime = 14;
@@ -94,35 +124,4 @@ public class Config {
      */
     @ConfigCover("pre.deal.file.position")
     public String preDealFile = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "dailyReport" + File.separator + "PreDeal.pre";
-
-    /**
-     * 报告人姓名,最好和jira中的姓名相一致
-     */
-    @ConfigCover(value = "reporter.name", necessary = true)
-    public String reporterName;
-
-    /**
-     * 部门名称
-     */
-    @ConfigCover(value = "department.name", necessary = true)
-    public String departmentName;
-
-    /**
-     * 收件人邮箱地址,多个值时用,分割
-     */
-    @ConfigCover(value = "email.receivers", necessary = true)
-    public String emailReceivers;
-
-    /**
-     * 抄送人邮箱地址,多个值时用,分割
-     */
-    @ConfigCover(value = "email.cc.recievers", necessary = true)
-    public String emailCcRecievers;
-
-    /**
-     * codeReview对象邮箱地址
-     */
-    @ConfigCover(value = "code.review.reciever", necessary = true)
-    public String codeReviewReciever;
-
 }

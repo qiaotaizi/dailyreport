@@ -20,18 +20,12 @@ public class ConfigManager {
     }
 
     /**
-     * jar包位置
-     */
-    private static final String JAR_DIR = Config.class.getResource("/").getPath();
-
-    /**
      * 读取外置配置文件的位置和顺序
      */
     private static final String[] CONFIG_DIRS = {
             System.getProperty("user.home") + File.separator,
             System.getProperty("user.home") + File.separator + "Documents" + File.separator,
-            System.getProperty("user.home") + File.separator + "Documents" + File.separator + "dailyReport" + File.separator,
-            JAR_DIR};
+            System.getProperty("user.home") + File.separator + "Documents" + File.separator + "dailyReport" + File.separator};
 
     /**
      * 配置文件的文件名
@@ -54,11 +48,10 @@ public class ConfigManager {
      * 配置初始化方法
      */
     public static void configInit() throws NullNecessaryConfigException {
-        System.out.println("jar包目录" + JAR_DIR);
         //查找配置文件dailyReport.properties
         //用文件中的配置替代Config默认配置
         //dailyReport.properties可能存在的位置(按照读取先后顺序):
-        //操作系统~目录->~目录/Documents->~目录/Documents/dailyReport->jar包跟所在目录
+        //操作系统~目录->~目录/Documents->~目录/Documents/dailyReport
         //后读取到的配置将覆盖之前读取到的配置
         for (String dirStr : CONFIG_DIRS) {
             File propertyFile = new File(dirStr + CONFIG_FILE_NAME);
