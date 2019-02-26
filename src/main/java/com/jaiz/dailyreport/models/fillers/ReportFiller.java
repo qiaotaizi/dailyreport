@@ -1,15 +1,11 @@
-package com.jaiz.dailyreport.models;
+package com.jaiz.dailyreport.models.fillers;
 
 import com.jaiz.dailyreport.annotations.FillerName;
-import com.jaiz.dailyreport.config.ConfigManager;
-
-import java.io.*;
-import java.lang.reflect.Field;
 
 /**
  * 日报内容填充物
  */
-public class ReportFiller {
+public class ReportFiller extends TemplateFiller {
 
     /**
      * 收件人
@@ -123,57 +119,5 @@ public class ReportFiller {
         this.tomorrowTargets = tomorrowTargets;
     }
 
-    /**
-     * 将内容填充至日报模板
-     * @param reportFile
-     */
-    public void fill(File reportFile) {
-        //获取模板文件
-        File templateFile=new File(ConfigManager.getInstance().reportTemplateFile);
-        BufferedReader reader=null;
-        BufferedWriter writer=null;
-        try {
-            reader=new BufferedReader(new FileReader(templateFile));
-            writer=new BufferedWriter(new FileWriter(reportFile));
-            String line;
-            while ((line=reader.readLine())!=null){
-                Field[] fields=this.getClass().getDeclaredFields();
-                for(Field f:fields){
-                    FillerName fillerName=f.getAnnotation(FillerName.class);
-                    String fillStr;
-                    if(f.getType()==String.class){
-                        //String
-                        f.get(this);
-                    }else{
-                        //String[]
-                    }
-                    // TODO
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } finally {
-            if(reader!=null){
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if(writer!=null){
-                try {
-                    writer.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        //逐行读取
-        //将可替换的值写入
-        //将该行写入新的日报文件
-    }
+
 }

@@ -4,40 +4,40 @@ import java.util.List;
 
 /**
  * 预处理工作内容
- * @author graci
  *
+ * @author graci
  */
 public class PreDealContent {
 
-	private List<String> achievement;
-	
-	private List<String> problem;
-	
-	private List<String> todo;
+    private List<String> achievement;
 
-	public List<String> getAchievement() {
-		return achievement;
-	}
+    private List<String> problem;
 
-	public void setAchievement(List<String> achievement) {
-		this.achievement = achievement;
-	}
+    private List<String> todo;
 
-	public List<String> getProblem() {
-		return problem;
-	}
+    public List<String> getAchievement() {
+        return achievement;
+    }
 
-	public void setProblem(List<String> problem) {
-		this.problem = problem;
-	}
+    public void setAchievement(List<String> achievement) {
+        this.achievement = achievement;
+    }
 
-	public List<String> getTodo() {
-		return todo;
-	}
+    public List<String> getProblem() {
+        return problem;
+    }
 
-	public void setTodo(List<String> todo) {
-		this.todo = todo;
-	}
-	
-	
+    public void setProblem(List<String> problem) {
+        this.problem = problem;
+    }
+
+    public List<String> getTodo() {
+        return todo;
+    }
+
+    public void setTodo(List<String> todo) {
+        this.todo = todo;
+    }
+
+
 }

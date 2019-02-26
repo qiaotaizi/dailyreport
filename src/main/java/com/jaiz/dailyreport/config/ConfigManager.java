@@ -41,7 +41,7 @@ public class ConfigManager {
     /**
      * 全局配置实例
      */
-    private static Config instance=new Config();
+    private static Config instance = new Config();
 
     /**
      * 单例模式配置管理器
@@ -146,13 +146,5 @@ public class ConfigManager {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Config c = ConfigManager.getInstance();
-        System.out.println(c.jiraLogin);
-        System.out.println(c.jiraLoginUsername);
-        System.out.println(c.jiraLoginPassword);
-        System.out.println(c.readDataFromJira);
     }
 }

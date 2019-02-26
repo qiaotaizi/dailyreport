@@ -3,8 +3,8 @@ package com.jaiz.dailyreport.models.readerImpls;
 import com.jaiz.dailyreport.config.ConfigManager;
 import com.jaiz.dailyreport.models.PreDealContent;
 import com.jaiz.dailyreport.models.ReportDataSourceReader;
-import com.jaiz.dailyreport.models.ReportFiller;
-import com.jaiz.dailyreport.models.ReportFillerFactory;
+import com.jaiz.dailyreport.models.fillers.ReportFiller;
+import com.jaiz.dailyreport.models.fillers.ReportFillerFactory;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,18 +17,18 @@ public class PreDealReader implements ReportDataSourceReader {
         PreDealContent pre = analysePreDealContent();
         // 预处理文档内容填充至自己的位置
         if (pre.getAchievement().size() == 0) {
-            pre.getAchievement().set(0,"1.xxxxA jira地址链接A");
+            pre.getAchievement().set(0, "1.xxxxA jira地址链接A");
         }
         if (pre.getProblem().size() == 0) {
-            pre.getProblem().set(0,"1.无");
+            pre.getProblem().set(0, "1.无");
         }
         if (pre.getTodo().size() == 0) {
-            pre.getAchievement().set(0,"1.xxxxA jira地址链接A");
+            pre.getAchievement().set(0, "1.xxxxA jira地址链接A");
         }
         Calendar curr = Calendar.getInstance();
         String date = curr.get(Calendar.YEAR) + "年" + (curr.get(Calendar.MONTH) + 1) + "月" + curr.get(Calendar.DATE)
                 + "日";
-        ReportFiller filler= ReportFillerFactory.getReportFiller(
+        ReportFiller filler = ReportFillerFactory.createReportFiller(
                 pre.getAchievement().toArray(new String[pre.getAchievement().size()]),
                 pre.getProblem().toArray(new String[pre.getProblem().size()]),
                 pre.getTodo().toArray(new String[pre.getTodo().size()]),
@@ -56,7 +56,7 @@ public class PreDealReader implements ReportDataSourceReader {
             String line;
             List<String> target = null;
             while ((line = reader.readLine()) != null) {
-                line=line.trim();
+                line = line.trim();
                 if ("".equals(line)) {
                     // 空行不处理
                     continue;

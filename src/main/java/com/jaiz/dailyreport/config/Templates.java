@@ -35,7 +35,9 @@ public class Templates {
      * 默认codeReview模板
      */
     public static final String DEFAULT_CODE_REVIEW_TEMPLATE =
-            "review报告：\n" +
+            "\n" +
+                    "\n" +
+                    "review报告：\n" +
                     "-------------------------------------------------------------------------------------------\n" +
                     "日期：周二${date01}\n" +
                     "项目：${date01.projects}\n" +

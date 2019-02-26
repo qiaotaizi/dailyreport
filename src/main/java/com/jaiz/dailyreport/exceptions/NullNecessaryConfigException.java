@@ -5,7 +5,7 @@ package com.jaiz.dailyreport.exceptions;
  */
 public class NullNecessaryConfigException extends Exception {
 
-    public NullNecessaryConfigException(String s){
+    public NullNecessaryConfigException(String s) {
         super(s);
     }
 

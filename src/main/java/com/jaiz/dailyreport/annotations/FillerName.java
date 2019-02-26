@@ -16,6 +16,7 @@ public @interface FillerName {
 
     /**
      * 对于String[]类型的填充物,需要设置连接符
+     *
      * @return
      */
     String joinSpliter() default "";
