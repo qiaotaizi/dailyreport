@@ -32,17 +32,17 @@ mvn clean install -Dmaven.test.skip=true
 需要你主动地填写在一个文件中  
 首先创建一个dailyReport.properties文件  
 建议使用位置%user.home%\Documents\dailyReport\dailyReport.properties  
-当然你也可以在其他几个特定地位置创建配置文件  
+当然你也可以在其他几个特定的位置创建配置文件  
 我会依次查找以下目录来发现配置文件:  
 %user.home%  
 %user.home%\Documents  
 %user.home%\Documents\dailyReport  
 本jar包所在目录  
 如果在上述多个目录下发现了配置文件  
-而且文件中包含相同地配置项时  
-后发现地配置项会覆盖先发现地配置项  
+而且文件中包含相同的配置项时  
+后发现的配置项会覆盖先发现的配置项  
 你必须主动地配置以下几个项目  
-ps:配置项中地非英文字母要使用unicode字符来替代  
+ps:配置项中的非英文字母要使用unicode字符来替代  
 否则可能会乱码
 ```
 #你的姓名
@@ -51,13 +51,13 @@ reporter.name=
 #你的部门名称
 department.name=
 
-收件人邮箱地址,多个值时用英文逗号分割
+#收件人邮箱地址,多个值时用英文逗号分割
 email.receivers=
 
-抄送人邮箱地址,多个值时用英文逗号分割
+#抄送人邮箱地址,多个值时用英文逗号分割
 email.cc.recievers=
 
-codeReview对象邮箱地址
+#codeReview对象邮箱地址
 code.review.reciever=
 
 #如果你打算从jira中读取日报内容,你还需要填写下面的配置项
@@ -69,7 +69,7 @@ jira.login.username=
 #你的jira密码
 jira.login.password=
 ```
-如果你忘记填写了必要地配置项  
+如果你忘记填写了必要的配置项  
 我会在命令行的输出中提示你
 
 ### 可选的配置
@@ -108,13 +108,17 @@ c(明天工作计划)
 就是这么简单
 
 #### 运行jar包
-接下来使用java命令运行jar包
-在git目录\target目录下打开命令行
+接下来使用java命令运行jar包  
+在jar包所在目录下打开命令行  
 运行如下代码
 ```
 java -jar dailyreport-3.0.jar
 ```
-当然你也可以用其他你喜欢的方式调用程序
+当然你也可以用其他你喜欢的方式调用程序  
+比如结合操作系统的定时任务  
+在每天的特定时间为你生成日报  
+如果你希望在将jar包迁移到其他目录  
+别忘了要同时迁移lib/目录
 
 ### 控制模板
 不出意外的话日报已经生成了
