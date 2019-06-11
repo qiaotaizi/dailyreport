@@ -95,7 +95,8 @@ public class ReportGenerator {
             dataSourceReader = new PreDealReader();
         }
         ReportFiller filler = dataSourceReader.read();
-        if(Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY){
+        if(ConfigManager.getInstance().codeReviewStatus &&
+                Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY){
             //周二抄送人附加code review对象
             String[] ccCopy=Arrays.copyOf(filler.getEmailCcRecievers(),filler.getEmailCcRecievers().length+1);
             ccCopy[ccCopy.length-1]=ConfigManager.getInstance().codeReviewReciever;

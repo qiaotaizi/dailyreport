@@ -50,6 +50,7 @@ public class Config {
 
     /**
      * 是否开启codeReview处理
+     * true:开启 false:不开启
      * 默认不开启
      */
     @ConfigCover(value = "code.review.status")
