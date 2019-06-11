@@ -35,8 +35,10 @@ public class App {
             e.printStackTrace();
             return;
         }
-        //周二附加code review模板
-        if (tar != null && Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
+        //周二附加code review模板(若开启)
+        if (tar != null &&
+                ConfigManager.getInstance().codeReviewStatus &&
+                Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
             new CodeReviewAppender().appendCodeReviewContent(tar);
         }
 

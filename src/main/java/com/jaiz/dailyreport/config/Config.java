@@ -49,6 +49,13 @@ public class Config {
     public String emailCcRecievers;
 
     /**
+     * 是否开启codeReview处理
+     * 默认不开启
+     */
+    @ConfigCover(value = "code.review.status")
+    public boolean codeReviewStatus;
+
+    /**
      * codeReview对象邮箱地址
      */
     @ConfigCover(value = "code.review.reciever", necessary = true)
