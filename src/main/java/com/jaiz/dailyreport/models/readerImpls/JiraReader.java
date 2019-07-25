@@ -100,7 +100,7 @@ public class JiraReader implements ReportDataSourceReader {
      * @return
      */
     private String concatMissionStr(int size, JiraMissionVO mission, Integer progress) {
-        return (size + 1) + "." + mission.getTitle() + " http://jira.ttpai.cn/browse/" + mission.getId() + " " + progress + "%";
+        return (size + 1) + "." + mission.getTitle() + " http://jira.xxxxx.cn/browse/" + mission.getId() + " " + progress + "%";
     }
 
     /**
@@ -165,7 +165,7 @@ public class JiraReader implements ReportDataSourceReader {
      */
     private JiraUserVO jiraForUser(String sessionId) {
         BasicClientCookie cookie = new BasicClientCookie(COOKIE_NAME, sessionId);
-        cookie.setDomain("jira.ttpai.cn");
+        cookie.setDomain("jira.xxxxx.cn");
         cookie.setPath("/");
         String result = HttpUtil.getCookie(ConfigManager.getInstance().jiraCalendarForUserUrl, cookie);
         List<JiraUserVO> users = JSONArray.parseArray(result, JiraUserVO.class);
@@ -197,7 +197,7 @@ public class JiraReader implements ReportDataSourceReader {
         paramMap.put("start", startDate);
         paramMap.put("end", endDate);
         BasicClientCookie cookie = new BasicClientCookie(COOKIE_NAME, sessionId);
-        cookie.setDomain("jira.ttpai.cn");
+        cookie.setDomain("jira.xxxxx.cn");
         cookie.setPath("/");
         String result = HttpUtil.getMapCookie(ConfigManager.getInstance().jiraCalendarJsonRequestUrl + userId, paramMap, cookie);
         return JSONArray.parseArray(result, JiraMissionVO.class);

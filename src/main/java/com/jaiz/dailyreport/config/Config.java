@@ -78,13 +78,13 @@ public class Config {
      * jira登录url
      */
     @ConfigCover("jira.login.url")
-    public String jiraLoginUrl = "http://jira.ttpai.cn/login.jsp";
+    public String jiraLoginUrl = "http://jira.xxxxx.cn/login.jsp";
 
     /**
      * jira登陆后获取用户信息url
      */
     @ConfigCover("jira.calendar.for.user.url")
-    public String jiraCalendarForUserUrl = "http://jira.ttpai.cn/rest/mailrucalendar/1.0/calendar/forUser";
+    public String jiraCalendarForUserUrl = "http://jira.xxxxx.cn/rest/mailrucalendar/1.0/calendar/forUser";
 
 
     /**
@@ -92,7 +92,7 @@ public class Config {
      * 最后需要拼接jiraCalendarForUserUrl获取的userId
      */
     @ConfigCover("jira.calendar.json.request.url")
-    public String jiraCalendarJsonRequestUrl = "http://jira.ttpai.cn/rest/mailrucalendar/1.0/calendar/events/";
+    public String jiraCalendarJsonRequestUrl = "http://jira.xxxxx.cn/rest/mailrucalendar/1.0/calendar/events/";
 
     /**
      * 日报生成位置
